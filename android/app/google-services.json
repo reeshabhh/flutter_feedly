@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "740408282269",
+    "project_id": "feedlyflutter-ce892",
+    "storage_bucket": "feedlyflutter-ce892.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740408282269:android:eec286d11f81387ee65874",
+        "android_client_info": {
+          "package_name": "com.example.flutter_feedly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740408282269-ta2bs8i2altgtsro0rr4p2joeq42tifa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC08YTBEqNUSpzYsD4HQq-sFsgLn2BLO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740408282269-ta2bs8i2altgtsro0rr4p2joeq42tifa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
