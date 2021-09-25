@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feedly/pages/create.dart';
+import 'package:flutter_feedly/widgets/compose_box.dart';
 
 class FeedPage extends StatefulWidget {
   FeedPage({Key? key}) : super(key: key);
@@ -8,8 +10,28 @@ class FeedPage extends StatefulWidget {
 }
 
 class _FeedPageState extends State<FeedPage> {
+  _navigateToCreatePage() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext ctx) {
+          return CreatePage();
+        },
+      ),
+    );
+  }
+
   _getItems() {
     List<Widget> _items = [];
+    Widget _composeBox = GestureDetector(
+      child: const ComposeBox(),
+      onTap: () {
+        _navigateToCreatePage();
+        debugPrintStack();
+        debugPrint('onTap is called');
+      },
+    );
+    _items.add(_composeBox);
     return _items;
   }
 
@@ -17,11 +39,12 @@ class _FeedPageState extends State<FeedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Feed'),
+        leading: const Icon(Icons.rss_feed),
+        title: const Text('Your Feed'),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.exit_to_app),
+            icon: const Icon(Icons.exit_to_app),
           ),
         ],
       ),
@@ -29,7 +52,7 @@ class _FeedPageState extends State<FeedPage> {
         children: _getItems(),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _navigateToCreatePage,
         child: Icon(Icons.add),
       ),
     );
