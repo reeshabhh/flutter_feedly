@@ -44,11 +44,12 @@ class _CreatePageState extends State<CreatePage> {
       ref = await _firestore.collection('posts').add(
         {
           'text': _postTextController.text.trim(),
-          
-          // TODO: owner name is null fix it 
+
+          // TODO: owner name is null fix it
           'owner_name': user_display_name,
           'owner': user_uid,
           'created': DateTime.now(),
+          'image': null,
           'likes': {},
           'likes_count': 0,
           'comments_count': 0,
@@ -61,7 +62,7 @@ class _CreatePageState extends State<CreatePage> {
           File(_image!.path),
         );
 
-      await  ref.update({
+        await ref.update({
           'image': _url,
         });
       }
